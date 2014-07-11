@@ -1,0 +1,7 @@
+[0m[[0mdebug[0m] [0mCopy resource mappings: [0m
+[0m[[0mdebug[0m] [0m	(C:\Users\Casa\playproj\nico\conf\application.conf,C:\Users\Casa\playproj\nico\target\scala-2.10\classes\application.conf)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\Casa\playproj\nico\conf\evolutions,C:\Users\Casa\playproj\nico\target\scala-2.10\classes\evolutions)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\Casa\playproj\nico\conf\Messages.en,C:\Users\Casa\playproj\nico\target\scala-2.10\classes\Messages.en)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\Casa\playproj\nico\conf\routes,C:\Users\Casa\playproj\nico\target\scala-2.10\classes\routes)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\Casa\playproj\nico\conf\evolutions\default,C:\Users\Casa\playproj\nico\target\scala-2.10\classes\evolutions\default)[0m
+[0m[[0mdebug[0m] [0m	(C:\Users\Casa\playproj\nico\conf\evolutions\default\1.sql,C:\Users\Casa\playproj\nico\target\scala-2.10\classes\evolutions\default\1.sql)[0m
