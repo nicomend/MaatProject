@@ -3,38 +3,39 @@
 # ~~~~
 
 # Home page
-GET    /                               controllers.Admin.index()
+GET         /                                    controllers.Admin.index()
 
 # Map static resources from the /public folder to the /assets URL path
-GET    /fonts/*file                    controllers.Assets.at(path="/public/fonts/", file)
-GET    /css/*file                      controllers.Assets.at(path="/public/stylesheets/", file)
-GET    /img/*file                      controllers.Assets.at(path="/public/images/", file)
-GET    /js/*file                       controllers.Assets.at(path="/public/javascripts/", file)
-GET    /html/*file                     controllers.Assets.at(path="/public/html/", file)
+GET         /fonts/*file                         controllers.Assets.at(path="/public/fonts/", file)
+GET         /css/*file                           controllers.Assets.at(path="/public/stylesheets/", file)
+GET         /img/*file                           controllers.Assets.at(path="/public/images/", file)
+GET         /js/*file                            controllers.Assets.at(path="/public/javascripts/", file)
+GET         /html/*file                          controllers.Assets.at(path="/public/html/", file)
 
 ##########################
 # Admin section
 ##########################
 
 # Category
-POST   /admin/category/create          controllers.Categories.add()
-POST   /admin/category/update/*catID   controllers.Categories.update(catID: Long)
-GET    /admin/category/delete/*catID   controllers.Categories.delete(catID: Long)
-GET    /admin/category/clear           controllers.Categories.clear()
+POST        /admin/category/create               controllers.Categories.add()
+POST        /admin/category/update/*catID        controllers.Categories.update(catID: Long)
+GET         /admin/category/delete/*catID        controllers.Categories.delete(catID: Long)
+GET         /admin/category/clear                controllers.Categories.clear()
 
 # Product
-POST   /admin/product/create           controllers.Products.create()
-POST   /admin/product/update           controllers.Products.update()
-GET    /admin/product/delete/*id       controllers.Products.delete(id: Long)
-GET    /admin/product/clear            controllers.Products.clear()
+POST        /admin/product/create                controllers.Products.create()
+POST        /admin/product/update                controllers.Products.update()
+GET         /admin/product/delete/*id            controllers.Products.delete(id: Long)
+GET         /admin/product/clear                 controllers.Products.clear()
 
 # Worker
-POST   /admin/worker/create            controllers.Workers.create()
+POST        /admin/worker/create                 controllers.Workers.create()
+GET         /admin/worker/clear                  controllers.Workers.clear()
 
 ##########################
 # Global
 ##########################
-GET    /categories                     controllers.Categories.getAll()
-GET    /products                       controllers.Products.getAll()
-GET    /workers                        controllers.Workers.getAll()
-GET    /admin/doSomething              controllers.Admin.doSomething()
+GET         /categories                          controllers.Categories.getAll()
+GET         /products                            controllers.Products.getAll()
+GET         /workers                             controllers.Workers.getAll()
+GET         /admin/doSomething                   controllers.Admin.doSomething()

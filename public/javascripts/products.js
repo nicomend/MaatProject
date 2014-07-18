@@ -1,7 +1,5 @@
 function Products($scope, $http) {
 
-	$scope.newProduct = {};
-
 	$http.get('categories').success(function(data, status) {
 		$scope.categories = data;
 	});
@@ -34,16 +32,17 @@ function Products($scope, $http) {
 	}
 
 	$scope.clearFields = function() {
-		$scope.newProduct.category = $scope.categories[0];
-		$scope.newProduct.price = 0;
-		$scope.newProduct.name = "";
+		$scope.newProduct = {};
+        $scope.searchProduct = {};
 	}
+
+    $scope.clearFields();
 	
 	var getIndexByID = function(id)
 	{
-		for (var index = 0; index < $scope.categories.length; index++)
+		for (var index = 0; index < $scope.products.length; index++)
 			{
-				if ($scope.categories[index].id == id)
+				if ($scope.products[index].id == id)
 					{
 					return index;
 					}

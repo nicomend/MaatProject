@@ -1,9 +1,12 @@
 <label>תעודת זהות</label>
-<input type='text' ng-pattern="[0-9]{9}" class="form-control" ng-model="newWorker.id"
-	required="required" />
+<input type='text' required="required" ng-pattern="/[0-9]{9}/" ng-maxlength="9" class="form-control"
+       ng-model="newWorker.idNumber"
+       ng-change="idChanged()"/>
+<div class="bg-danger" ng-hide="isValidID">תעודת הזהות כבר נבחרה</div>
 <label>שם העובד</label>
 <input type='text' class="form-control" ng-model="newWorker.name"
-	required="required" />
-<br />
+       required="required"/>
+<br/>
 <button class='btn btn-success btn-sm' ng-click='create()'
-			ng-disabled="createForm.$invalid">אישור</button>
+        ng-disabled="createForm.$invalid || !isValidID">אישור
+</button>
