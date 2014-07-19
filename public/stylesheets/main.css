@@ -53,3 +53,9 @@ ul {
 .rowInTable.ng-leave {
 	-webkit-animation: fadeOut 0.2s;
 }
+
+.chart
+{
+    width: 500px;
+    height: 200px;
+}

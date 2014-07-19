@@ -1,7 +1,7 @@
 /**
  * Created by Idan on 18/07/14.
  */
-var app = angular.module("worker", [ "ngRoute", "ngAnimate", "xeditable", "ui.bootstrap" ]);
+var app = angular.module("store", [ "ngRoute", "ngAnimate", "ui.bootstrap" ]);
 
 app.config([ '$routeProvider', function($routeProvider) {
     $routeProvider.when('/categories', {
@@ -10,26 +10,33 @@ app.config([ '$routeProvider', function($routeProvider) {
     }).when('/products',{
             templateUrl: 'html/workerViews/products.html',
             controller: 'Products'
-        }).otherwise({redirectTo:'/categories'});
+        }).when('/cart',{
+        templateUrl: 'html/workerViews/cart.html',
+        controller: 'Cart'
+    }).otherwise({redirectTo:'/categories'});
 } ]);
-
-
-app.run(function(editableOptions, editableThemes) {
-    editableOptions.theme = 'bs3';
-    editableThemes.bs3.buttonsClass = 'btn-sm';
-});
 
 function Worker($scope, $location) {
     $scope.toolbar = "html/toolbar/workerToolbar.html";
 
+    $scope.cart = [];
+
     // init menu items
     $scope.tabs = [ {
-        'label' : 'צפייה בקטגוריות',
+        'label' : 'קטגוריות',
         'url' : '/categories'
     }, {
-        'label' : 'צפייה במוצרים',
+        'label' : 'מוצרים',
         'url' : '/products'
+    }, {
+        'label' : 'עגלת קניות',
+        'url' : '/cart'
     }];
+
+    $scope.addToCart = function(product)
+    {
+        $scope.cart.push(product);
+    }
 
     $scope.isActive = function(tab){
         return tab.url === $location.path();

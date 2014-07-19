@@ -1,5 +1,5 @@
 
-<h2 class="sub-header">צפייה במוצרים</h2>
+<h2 class="sub-header">מוצרים</h2>
 <div ng-include="toolbar"></div>
 <table class="table table-hover" style="width: 50%;"
        ng-hide="products.length == 0">
@@ -8,6 +8,7 @@
         <th>שם המוצר</th>
         <th>שם הקטגוריה</th>
         <th>מחיר</th>
+        <th>הוסף לעגלה</th>
     </tr>
     </thead>
     <tbody>
@@ -15,6 +16,10 @@
         <td>{{product.name}}</td>
         <td>{{product.category.name}}</td>
         <td>{{product.price}}‏₪</td>
+        <td><button ng-click="addToCart(product)"
+                    class="btn btn-success btn-sm">
+            <span class="glyphicon glyphicon-shopping-cart"></span>
+        </button</td>
     </tr>
     </tbody>
 </table>
