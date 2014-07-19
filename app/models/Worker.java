@@ -15,6 +15,6 @@ public class Worker extends Model {
 	public String name;
 	public Date hireDate;
 
-	public static Finder<String, Worker> finder = new Finder<>(String.class,
+	public static Finder<String, Worker> finder = new Finder<String, Worker>(String.class,
 			Worker.class);
 }
