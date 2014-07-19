@@ -18,9 +18,11 @@ create table product (
 ;
 
 create table worker (
-  id                        varchar(255) not null,
+  id                        bigint not null,
+  id_number                 varchar(255),
   name                      varchar(255),
   hire_date                 timestamp,
+  constraint uq_worker_id_number unique (id_number),
   constraint pk_worker primary key (id))
 ;
 

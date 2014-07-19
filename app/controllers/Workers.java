@@ -18,4 +18,11 @@ public class Workers extends Controller {
 		worker.save();
 		return ok(Json.toJson(worker));
 	}
+
+    public static Result clear() {
+        for (Worker worker : Worker.finder.all()) {
+            worker.delete();
+        }
+        return ok();
+    }
 }
