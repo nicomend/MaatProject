@@ -2,13 +2,13 @@ var app = angular.module("admin", [ "ngRoute", "ngAnimate", "xeditable", "ui.boo
 
 app.config([ '$routeProvider', function($routeProvider) {
 	$routeProvider.when('/categories', {
-		templateUrl : 'html/categories.html',
+		templateUrl : 'html/adminViews/categories.html',
 		controller : 'Categories'
 	}).when('/products',{
-		templateUrl: 'html/products.html',
+		templateUrl: 'html/adminViews/products.html',
 		controller: 'Products'
 	}).when('/workers',{
-		templateUrl: 'html/workers.html',
+		templateUrl: 'html/adminViews/workers.html',
 		controller: 'Workers'
 	}).otherwise({redirectTo:'/categories'});
 } ]);
@@ -20,12 +20,12 @@ app.run(function(editableOptions, editableThemes) {
 });
 
 function Admin($scope, $location) {
-	$scope.toolbar = "html/toolbar/toolbar.html";
+	$scope.toolbar = "html/toolbar/adminToolbar.html";
 
 	// init menu items
 	$scope.tabs = [ {
 		'label' : 'ניהול קטגוריות',
-		'url' : '/categories',
+		'url' : '/categories'
 	}, {
 		'label' : 'ניהול מוצרים',
 		'url' : '/products'
