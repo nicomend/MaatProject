@@ -11,10 +11,6 @@ import play.mvc.Result;
 import java.util.List;
 
 public class Store extends Controller {
-    public static Result index() {
-        return ok(views.html.store.render());
-    }
-
     public static Result checkoutCart(String workerID)
     {
         Worker worker = Worker.finder.byId(workerID);
