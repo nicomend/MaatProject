@@ -13,6 +13,7 @@ public class ProductInSale extends Model {
     @ManyToOne
     @JoinColumn(name = "saleID")
     public Sale sale;
+
     @JoinColumn(name = "productID")
     @ManyToOne
     public Product product;

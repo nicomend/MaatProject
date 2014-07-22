@@ -38,8 +38,9 @@ GET            /admin/worker/clear                  controllers.Workers.clear()
 GET            /categories                          controllers.Categories.getAll()
 GET            /products                            controllers.Products.getAll()
 GET            /workers                             controllers.Workers.getAll()
+GET            /sales                               controllers.Sales.getAll()
 
 ##########################
 # Store
 ##########################
-POST           /cartCheckout/*workerId              controllers.Store.checkoutCart(workerId : String)
+POST           /sale/create                         controllers.Sales.create()
