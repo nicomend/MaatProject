@@ -26,7 +26,8 @@ public class Sales extends Controller {
         {
             Product product = Json.fromJson(iterator.next(), Product.class);
             ProductInSale productInSale = new ProductInSale();
-            productInSale.product = product;
+            productInSale.name = product.name;
+            productInSale.price = product.price;
             productInSale.sale = sale;
             productInSale.save();
         }
@@ -34,8 +35,13 @@ public class Sales extends Controller {
         return ok(Json.toJson(sale));
     }
 
+    public static Result getWithLimit(int limit)
+    {
+        return ok(Json.toJson(Sale.finder.orderBy("date desc").setMaxRows(limit).findList()));
+    }
+
     public static Result getAll()
     {
-        return ok(Json.toJson(Sale.finder.orderBy("date desc").setMaxRows(5).findList()));
+        return ok(Json.toJson(Sale.finder.orderBy("date desc").findList()));
     }
 }

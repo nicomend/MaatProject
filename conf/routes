@@ -39,6 +39,7 @@ GET            /categories                          controllers.Categories.getAl
 GET            /products                            controllers.Products.getAll()
 GET            /workers                             controllers.Workers.getAll()
 GET            /sales                               controllers.Sales.getAll()
+GET            /sales/*limit                        controllers.Sales.getWithLimit(limit: Integer)
 
 ##########################
 # Store

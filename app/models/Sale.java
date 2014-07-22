@@ -31,7 +31,7 @@ public class Sale extends Model {
         int amount = 0;
         for (ProductInSale productInSale : products)
         {
-            amount += productInSale.product.price;
+            amount += productInSale.price;
         }
 
         return amount;

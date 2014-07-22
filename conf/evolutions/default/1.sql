@@ -19,7 +19,8 @@ create table product (
 
 create table product_in_sale (
   saleID                    bigint,
-  productID                 bigint)
+  name                      varchar(255),
+  price                     integer)
 ;
 
 create table sale (
@@ -48,10 +49,8 @@ alter table product add constraint fk_product_category_1 foreign key (categoryID
 create index ix_product_category_1 on product (categoryID);
 alter table product_in_sale add constraint fk_product_in_sale_sale_2 foreign key (saleID) references sale (id) on delete restrict on update restrict;
 create index ix_product_in_sale_sale_2 on product_in_sale (saleID);
-alter table product_in_sale add constraint fk_product_in_sale_product_3 foreign key (productID) references product (id) on delete restrict on update restrict;
-create index ix_product_in_sale_product_3 on product_in_sale (productID);
-alter table sale add constraint fk_sale_worker_4 foreign key (workerID) references worker (id) on delete restrict on update restrict;
-create index ix_sale_worker_4 on sale (workerID);
+alter table sale add constraint fk_sale_worker_3 foreign key (workerID) references worker (id) on delete restrict on update restrict;
+create index ix_sale_worker_3 on sale (workerID);
 
 
 

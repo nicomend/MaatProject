@@ -14,7 +14,7 @@ public class ProductInSale extends Model {
     @JoinColumn(name = "saleID")
     public Sale sale;
 
-    @JoinColumn(name = "productID")
-    @ManyToOne
-    public Product product;
+    public String name;
+
+    public int price;
 }
