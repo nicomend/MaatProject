@@ -22,6 +22,8 @@ public class Worker extends Model {
     @JsonIgnore
     public List<Sale> sales;
 
+    public boolean isAdmin;
+
     @Transient
     private int salesCount;
 

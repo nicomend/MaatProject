@@ -25,4 +25,14 @@ public class Workers extends Controller {
         }
         return ok();
     }
+
+    public static void createAdmin()
+    {
+        Worker worker = new Worker();
+        worker.name = "ADMIN";
+        worker.id = "2";
+        worker.hireDate = Calendar.getInstance().getTime();
+        worker.isAdmin = true;
+        worker.save();
+    }
 }

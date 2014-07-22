@@ -1,3 +1,5 @@
+import controllers.Workers;
+import play.Application;
 import play.GlobalSettings;
 import play.libs.F.Promise;
 import play.mvc.Action;
@@ -31,5 +33,12 @@ public class Global extends GlobalSettings {
     @Override
     public Action onRequest(Http.Request request, Method actionMethod) {
         return new ActionWrapper(super.onRequest(request, actionMethod));
+    }
+
+    @Override
+    public void onStart(Application app)
+    {
+        super.onStart(app);
+        Workers.createAdmin();
     }
 }

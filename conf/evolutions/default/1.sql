@@ -34,6 +34,7 @@ create table worker (
   id                        varchar(255) not null,
   name                      varchar(255),
   hire_date                 timestamp,
+  is_admin                  boolean,
   constraint pk_worker primary key (id))
 ;
 
