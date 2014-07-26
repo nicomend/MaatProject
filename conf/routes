@@ -45,3 +45,4 @@ GET            /sales/*limit                        controllers.Sales.getWithLim
 # Store
 ##########################
 POST           /sale/create                         controllers.Sales.create()
+POST           /login                               controllers.Application.login()

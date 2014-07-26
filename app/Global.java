@@ -34,11 +34,4 @@ public class Global extends GlobalSettings {
     public Action onRequest(Http.Request request, Method actionMethod) {
         return new ActionWrapper(super.onRequest(request, actionMethod));
     }
-
-    @Override
-    public void onStart(Application app)
-    {
-        super.onStart(app);
-        Workers.createAdmin();
-    }
 }

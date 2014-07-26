@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import models.Product;
 import models.ProductInSale;
 import models.Sale;
+import models.Worker;
 import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -20,11 +21,14 @@ public class Sales extends Controller {
     {
         Sale sale = new Sale();
         sale.date =  Calendar.getInstance().getTime();
+        JsonNode params = request().body().asJson();
+        Worker worker = Json.fromJson(params.get("worker"), Worker.class);
+        sale.worker = worker;
         sale.save();
-        Iterator<JsonNode> iterator = request().body().asJson().iterator();
-        while (iterator.hasNext())
+        Iterator<JsonNode> products = params.get("products").iterator();
+        while (products.hasNext())
         {
-            Product product = Json.fromJson(iterator.next(), Product.class);
+            Product product = Json.fromJson(products.next(), Product.class);
             ProductInSale productInSale = new ProductInSale();
             productInSale.name = product.name;
             productInSale.price = product.price;
